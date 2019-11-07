@@ -1,0 +1,18 @@
+
+<form [formGroup]="this.createCommentForm" (ngSubmit)="this.createComment()">
+  <div class="form-group">
+    <label for="comment-text"> Your Comment </label>
+    <input type="text" class="form-control" id="text-input" placeholder="Comment Text" formControlName="text" />
+  </div>
+
+  <div *ngIf="this.createCommentForm.controls.text.invalid && this.createCommentForm.controls.text.dirty"
+          class="alert alert-danger" role="alert">
+          <div *ngIf="this.createCommentForm.controls.text.errors.required">
+            Text Required!
+          </div>
+        </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="createCommentForm.invalid"> Create Comment </button>
+
+  </form>
+

@@ -1,0 +1,46 @@
+
+<div class="posts-container">
+
+  <div class="d-md-flex h-md-100 align-items-center">
+
+    <!-- First Half -->
+    
+    <div class="col-md-6 ">
+        <div class="d-md-flex align-items-center text-center justify-content-center">
+            <div class="logoarea pt-5 pb-5">
+              <h2>Welcome to our forum</h2>
+              <span>Feel free to choose a post that you're interested in.</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Second Half -->
+    
+    <div class="col-md-6 ">
+        <div class="d-md-flex align-items-center justify-content-center">
+          <div class="btn-group mr-2">
+            <a class="nav-link" [routerLink]="['/api']" routerLinkActive="active"></a>
+            <button  id="create-post" class="btn btn-primary btn-lg" (click)="redirectToCreatePost()">
+              Create New Post
+            </button>
+          </div>
+        </div>
+    </div>
+        
+    </div>
+
+  <br>
+
+  
+  <br>
+  <h3 *ngIf="!posts.length">It's empty here</h3>
+  <hr *ngIf="posts.length">
+  <div class="post" *ngFor="let post of posts">
+    <h3>{{post.title}} </h3>
+    <span class="btn-group mr-2">
+      <button class="btn btn-primary" (click)="redirectToPostDetails(post.id)">
+        Read more
+      </button>
+    </span>
+  </div>
+</div>

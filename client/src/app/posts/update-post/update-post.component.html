@@ -1,0 +1,30 @@
+  
+      <form [formGroup]="this.updatePostForm" (ngSubmit)="this.updateCurrentPost()">
+        <div class="form-group">
+          <label for="post-title"> Update Your Post Title </label>
+          <input type="text" class="form-control" id="title-input" placeholder="Post Title" formControlName="title" />
+        </div>
+
+        <div *ngIf="this.updatePostForm.controls.title.invalid && this.updatePostForm.controls.title.dirty"
+          class="alert alert-danger" role="alert">
+          <div *ngIf="this.updatePostForm.controls.title.errors.required">
+            Title Required!
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <label for="post-text"> Update Your Post Text </label>
+          <input type="text" class="form-control" id="text-input" placeholder="Post Text" formControlName="text" />
+        </div>
+
+        <div *ngIf="this.updatePostForm.controls.text.invalid && this.updatePostForm.controls.text.dirty"
+          class="alert alert-danger" role="alert">
+          <div *ngIf="this.updatePostForm.controls.text.errors.required">
+            Text Required!
+          </div>
+        </div>
+      
+        <button type="submit" class="btn btn-primary" [disabled]="updatePostForm.invalid"> Update Forum Post</button>
+      
+        </form>
+      

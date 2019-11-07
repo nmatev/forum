@@ -1,0 +1,42 @@
+.container {
+  /* background-color: #eee;
+border: 1px solid #ccc;
+padding: 10px;
+margin: 10px auto;
+align-items: center;
+max-width: 100%;
+max-height: 100%;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%); */
+
+background-color: #eee;
+  border: 1px solid #ccc;
+  font-size: 18px; 
+  align-items: center;  
+  max-width: 100%;
+}
+
+.post-title{
+  position: relative;
+  margin: 10px;
+  padding: 10px;
+}
+
+.post-text {
+  margin: 10px;
+  padding: 10px;
+}
+
+.badge {
+  overflow: auto;
+  margin: 10px;
+  padding: 10px;
+}
+
+.creator {
+  overflow: auto;
+  margin: 10px;
+  padding: 10px;
+}

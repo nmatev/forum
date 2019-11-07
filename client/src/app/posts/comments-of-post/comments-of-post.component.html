@@ -1,0 +1,32 @@
+<br>
+  
+  <h3 *ngIf="!comments.length">It's empty here</h3>
+  <hr *ngIf="comments.length">
+
+  <div class="comment" *ngFor="let comment of comments; let i = index">
+    <div>
+        <p class="post-text"> {{ this.comment.text }} </p>
+    <div class="badge"> Posted on {{ this.comment.createdOn | date: 'short'}}</div>
+    <!-- <div class="creator"> Posted By {{this.comment.user}}</div>  -->
+    <br>
+    <span class="btn-group mr-2">
+        <button class="btn btn-danger" (click)="removeThisComment(this.comment.id)">
+          Delete Your Comment
+        </button>
+      </span>
+
+      <span class="btn-group mr-2">
+          <button class="btn btn-primary" (click)="showUpdatePostButton(this.comment.id)">
+            <div class="clicked">
+            Update Your Comment
+            </div>
+          </button>
+        </span>
+
+        <div class="card-body" *ngIf="this.comment.showUpdateComment">
+          <app-update-comment [comment]='this.comment'></app-update-comment>
+        </div>
+
+      </div>
+
+      

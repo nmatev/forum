@@ -1,0 +1,8 @@
+.comment {
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  font-size: 18px; 
+  align-items: center;  
+}

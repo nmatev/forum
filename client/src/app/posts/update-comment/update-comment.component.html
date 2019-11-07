@@ -1,0 +1,24 @@
+
+      <form [formGroup]="this.updateCommentForm" (ngSubmit)="this.saveYourUpdatePost()">
+          
+          <div class="form-group">
+            <label for="post-text"> Update Your Comment  </label>
+            <input type="text" class="form-control" id="text-input" placeholder="Update Comment Text" formControlName="text" />
+          </div>
+
+          <div *ngIf="this.updateCommentForm.controls.text.invalid && this.updateCommentForm.controls.text.dirty"
+          class="alert alert-danger" role="alert">
+          <div *ngIf="this.updateCommentForm.controls.text.errors.required">
+            Text Required!
+          </div>
+        </div>
+        
+          <button type="submit" class="btn btn-primary" [disabled]="updateCommentForm.invalid"> Save Your Update</button>
+          </form>
+          
+          
+          <button (click)="hideUpdatePostText(comment.id)" type="button" class="btn btn-danger"> Don't update, yet</button>
+
+          
+          
+          

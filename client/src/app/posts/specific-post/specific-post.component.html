@@ -1,0 +1,30 @@
+
+
+
+<div *ngIf="currentPost" class="container">
+    <h1 class="post-title"> {{ this.currentPost.title }}</h1>
+      <p class="post-text"> {{ this.currentPost.text }} </p>
+
+      <div>
+  <div class="badge"> Posted on {{ this.currentPost.createdOn | date: 'short'}}</div>
+  <!-- <div class="creator"> Posted By {{this.currentUser.name}}</div>       -->
+        
+      </div>
+
+       <app-delete-post></app-delete-post>
+
+       <div class="btn-group mr-2">
+        <a class="nav-link" [routerLink]="['/posts']" routerLinkActive="active"></a>
+        <button  id="update-post" class="btn btn-primary btn" (click)="redirectToPostUpdate(this.currentPost.id)">
+          Update Your Post
+        </button>
+      </div>
+
+<app-create-comment> Create Comment </app-create-comment>  
+<app-comments-of-post></app-comments-of-post>
+</div>
+
+
+
+
+          

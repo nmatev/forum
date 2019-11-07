@@ -1,0 +1,42 @@
+<form [formGroup]="this.registerForm" (ngSubmit)="this.register()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name-input" placeholder="Name" formControlName="name" />
+  </div>
+
+  <div *ngIf="this.registerForm.controls.name.invalid && this.registerForm.controls.name.dirty"
+    class="alert alert-danger" role="alert">
+    <div *ngIf="this.registerForm.controls.name.errors.required">
+      User Name Required!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email-input" placeholder="Email" formControlName="email" />
+  </div>
+  
+  <div *ngIf="this.registerForm.controls.email.invalid && this.registerForm.controls.email.dirty"
+    class="alert alert-danger" role="alert">
+    <div *ngIf="this.registerForm.controls.email.errors.required">
+      Email Required!
+    </div>
+
+    <div *ngIf="!this.registerForm.controls.email.errors.minLength">
+      Email must be at least 4 characters long!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password-input" placeholder="Password"
+      formControlName="password" />
+  </div>
+
+  <div *ngIf="this.registerForm.controls.password.invalid && this.registerForm.controls.password.dirty"
+    class="alert alert-danger" role="alert">
+    Passwords must contain a minimum of 6 upper case, numeric, and special characters!
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+</form>
