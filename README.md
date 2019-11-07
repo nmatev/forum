@@ -50,7 +50,5 @@ ng s
 
 Fresh registration
 
-![alt text](https://i.imgur.com/Ipm4F7M.png)
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
